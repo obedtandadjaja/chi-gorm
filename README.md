@@ -4,7 +4,7 @@ Experimental project using Chi and GORM
 ## Folder structure
 
 Structure is inspired by https://manuel.kiessling.net/2012/09/28/applying-the-clean-architecture-to-go-applications/;
-accepting on the principles that I like and getting rid of other notions that
+accepting only the principles that I like and getting rid of other notions that
 I deem less important.
 
 ```
