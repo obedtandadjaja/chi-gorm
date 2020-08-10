@@ -1,6 +1,20 @@
 # chi-gorm
 Experimental project using Chi and GORM
 
+## Starting the server
+
+
+```
+# install reflex for hot reloading
+go get github.com/cespare/reflex
+
+# install missing dependencies
+make install
+
+# starts development mode
+make run
+```
+
 ## Folder structure
 
 Structure is inspired by https://manuel.kiessling.net/2012/09/28/applying-the-clean-architecture-to-go-applications/;
@@ -12,7 +26,7 @@ I deem less important.
 |- controllers
 |- config
 |- dal
-|- interfaces
+|- interfaces (implemented in the future)
 |- lib
 |- models
 |- services
@@ -35,7 +49,8 @@ database connection configurations.
 **Interfaces** - the bridge that allows two different entities to interact
 with each other. For example, if the controller wants to talk to services,
 UserController will implement IUserService ("I" indicating interface), and
-in turn IUserService will be injected with UserService.
+in turn IUserService will be injected with UserService. This will be implemented
+in the future since Dependency Injection requires a lot of operations overhead.
 
 **models** - contains structs reflecting our data object from database.
 

@@ -4,4 +4,4 @@ BUILD := $(shell git rev-parse --short HEAD)
 
 run:
 	@echo "  > $(PROJECT) is running..."
-	@go run main.go
+	@reflex -r '\.go' -s -- sh -c "go run ."
