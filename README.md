@@ -5,14 +5,11 @@ Experimental project using Chi and GORM
 
 
 ```
-# install reflex for hot reloading
-go get github.com/cespare/reflex
-
-# install missing dependencies
-make install
+# install yolo - for hot reloading
+go get github.com/azer/yolo
 
 # starts development mode
-make run
+make start
 ```
 
 ## Folder structure
