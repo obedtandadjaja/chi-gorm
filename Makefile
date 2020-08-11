@@ -33,8 +33,7 @@ stop: stop-server
 
 start-server: stop-server
 	@echo "  >  $(PROJECTNAME) is available at $(ADDR)"
-	@-$(GOBIN)/$(PROJECTNAME) 2>&1 & echo $$! > $(PID)
-	@cat $(PID) | sed "/^/s/^/  \>  PID: /"
+	@-$(GOBIN)/$(PROJECTNAME)
 
 stop-server:
 	@-touch $(PID)
