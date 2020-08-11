@@ -3,6 +3,14 @@ Experimental project using Chi and GORM
 
 ## Starting the server
 
+Setup database
+
+```
+psql
+> CREATE DATABASE chi_gorm
+
+# Be sure to update main.go with your database credentials
+```
 
 ```
 # install yolo - for hot reloading
@@ -26,6 +34,7 @@ I deem less important.
 |- interfaces (implemented in the future)
 |- lib
 |- models
+|- migrations
 |- services
 main.go
 router.go
@@ -51,9 +60,19 @@ in the future since Dependency Injection requires a lot of operations overhead.
 
 **models** - contains structs reflecting our data object from database.
 
+**migrations** - where the database migrations reside.
+
 **services** - where the business logic should live. Handles controller
 requests and fetch data from data access access layer.
 
 **main.go** - entry point of our system.
 
 **router.go** - where we bind controllers to routes.
+
+## Database migrations
+
+Database migrations are not versioned since we are going to use Gorm's
+`AutoMigrate` functionality to reduce complexity. This means that when you
+update the model, and you push this update to production, the database will
+be automatically changed. Note that this might break functionality in the case
+of backwards incompatible changes, and so it must be done with caution.
